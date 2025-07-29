@@ -1,15 +1,17 @@
+import dotenv from "dotenv";
+dotenv.config(); // ✅ Make sure this is FIRST
+
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
-import passport from "passport";
 import session from "express-session";
-import "./config/passport.js";
-
+import passport from "passport";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js";
 
+// ✅ Import AFTER dotenv.config()
+import "./config/passport.js";
+
 const app = express();
-dotenv.config();
 
 app.use(cors());
 app.use(express.json());

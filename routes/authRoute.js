@@ -1,7 +1,8 @@
 import express from "express";
-import { register, login } from "../controller/authController";
-import { loginLimiter, registerLimiter } from "../middleware/rateLimited";
+import { register, login } from "../controller/authController.js";
+import { loginLimiter, registerLimiter } from "../middleware/rateLimited.js";
 import passport from "passport";
+import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
