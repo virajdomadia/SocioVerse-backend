@@ -28,7 +28,7 @@ router.get(
     const token = jwt.sign({ id: req.user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
-    res.redirect(`http://localhost:3000/oauth-success?token=${token}`);
+    res.redirect(`http://localhost:5173/oauth-success?token=${token}`);
   }
 );
 
